@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@600&amp;display=swap');
+    </style>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7C5CFF" stop-opacity="0.3"/>
+      <stop offset="70%" stop-color="#7C5CFF" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#7C5CFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="grain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="overlay" result="blend"/>
+      <feComposite in="blend" in2="SourceGraphic" operator="in"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="1000" fill="#0B0A0F"/>
+
+  <!-- Subtle purple glow -->
+  <ellipse cx="500" cy="500" rx="380" ry="320" fill="url(#glow)"/>
+
+  <!-- Grain overlay -->
+  <rect width="1000" height="1000" fill="#F3F0EA" opacity="0.03" filter="url(#grain)"/>
+
+  <!-- Logo: "king" + dot, horizontally centered as a group -->
+  <!-- At ~170px Instrument Sans 600, "king" ≈ 320px wide -->
+  <!-- Group starts at x=340, dot follows text -->
+  <text
+    x="486"
+    y="545"
+    font-family="'Instrument Sans', system-ui, sans-serif"
+    font-weight="600"
+    font-size="170"
+    letter-spacing="-7"
+    fill="#F3F0EA"
+    text-anchor="end"
+  >king</text>
+
+  <!-- Dot: raised ~10px from baseline, gap of 6px after text -->
+  <circle cx="506" cy="527" r="15" fill="#7C5CFF"/>
+</svg>

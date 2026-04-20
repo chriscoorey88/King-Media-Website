@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Server logs
+nohup.out
+
+# Dev artifacts
+temporary screenshots/
+compare.html
+
+# Internal design/reference files (not for public repo)
+References/
+old-logos/
+Current logo/
+
+# Claude local config
+.claude/
+
+# Temp asset files
+assets/video-poster-raw.png
+assets/video-poster.jpg
+assets/instrument-sans.zip
+assets/instrument-sans-600.ttf
+gen_logo.py
+
+# Node
+node_modules/
