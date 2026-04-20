@@ -5,6 +5,9 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT = 3000;
+const ROOT = fs.existsSync(path.join(__dirname, 'dist'))
+  ? path.join(__dirname, 'dist')
+  : __dirname;
 
 const MIME = {
   '.html': 'text/html',
@@ -29,7 +32,7 @@ http.createServer((req, res) => {
   if (urlPath === '/') urlPath = '/index.html';
   if (urlPath === '/privacy') urlPath = '/privacy.html';
   if (urlPath === '/terms') urlPath = '/terms.html';
-  const filePath = path.join(__dirname, urlPath);
+  const filePath = path.join(ROOT, urlPath);
   const ext = path.extname(filePath).toLowerCase();
   const mime = MIME[ext] || 'application/octet-stream';
 

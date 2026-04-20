@@ -27,3 +27,4 @@ gen_logo.py
 
 # Node
 node_modules/
+/dist
