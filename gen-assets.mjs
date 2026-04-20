@@ -16,10 +16,9 @@ const FG = '#F3F0EA';
 const ACCENT = '#7C5CFF';
 const OUT = path.join(__dirname, 'public');
 
-// ── Square logo SVG (no web font import — uses system fallback) ──────────────
-const squareSvg = (size) => {
-  const scale = size / 1000;
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="${size}" height="${size}">
+// ── Square logo SVG for favicon (87-90% canvas width) ───────────────────────
+// font-size 430 → "king" ≈800px + gap(15) + dot(76) ≈ 891px = 89% of 1000
+const faviconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
   <defs>
     <radialGradient id="glow" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="${ACCENT}" stop-opacity="0.3"/>
@@ -28,21 +27,45 @@ const squareSvg = (size) => {
     </radialGradient>
   </defs>
   <rect width="1000" height="1000" fill="${BG}"/>
-  <ellipse cx="500" cy="500" rx="380" ry="320" fill="url(#glow)"/>
+  <ellipse cx="500" cy="500" rx="480" ry="480" fill="url(#glow)"/>
   <text
-    x="486" y="545"
+    x="855" y="585"
     font-family="'Instrument Sans', ui-sans-serif, system-ui, sans-serif"
     font-weight="600"
-    font-size="170"
-    letter-spacing="-7"
+    font-size="430"
+    letter-spacing="-17"
     fill="${FG}"
     text-anchor="end"
   >king</text>
-  <circle cx="506" cy="527" r="15" fill="${ACCENT}"/>
+  <circle cx="908" cy="540" r="38" fill="${ACCENT}"/>
 </svg>`;
-};
 
-// ── OG image SVG (1200×630 landscape) ────────────────────────────────────────
+// ── Square logo SVG for apple-touch-icon (77% canvas — iOS clips corners) ───
+// font-size 370 → "king" ≈689px + gap(13) + dot(66) ≈ 768px = 77% of 1000
+const appleSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="${ACCENT}" stop-opacity="0.3"/>
+      <stop offset="70%" stop-color="${ACCENT}" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="${ACCENT}" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1000" height="1000" fill="${BG}"/>
+  <ellipse cx="500" cy="500" rx="420" ry="420" fill="url(#glow)"/>
+  <text
+    x="805" y="580"
+    font-family="'Instrument Sans', ui-sans-serif, system-ui, sans-serif"
+    font-weight="600"
+    font-size="370"
+    letter-spacing="-15"
+    fill="${FG}"
+    text-anchor="end"
+  >king</text>
+  <circle cx="851" cy="540" r="33" fill="${ACCENT}"/>
+</svg>`;
+
+// ── OG image SVG (1200×630, wordmark ~55% canvas width) ──────────────────────
+// font-size 325 → "king" ≈605px + gap(14) + dot(58) ≈ 677px = 56% of 1200
 const ogSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
     <radialGradient id="glow" cx="50%" cy="50%" r="50%">
@@ -52,17 +75,17 @@ const ogSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" wi
     </radialGradient>
   </defs>
   <rect width="1200" height="630" fill="${BG}"/>
-  <ellipse cx="600" cy="315" rx="460" ry="280" fill="url(#glow)"/>
+  <ellipse cx="600" cy="315" rx="560" ry="300" fill="url(#glow)"/>
   <text
-    x="614" y="360"
+    x="867" y="403"
     font-family="'Instrument Sans', ui-sans-serif, system-ui, sans-serif"
     font-weight="600"
-    font-size="180"
-    letter-spacing="-8"
+    font-size="325"
+    letter-spacing="-14"
     fill="${FG}"
     text-anchor="end"
   >king</text>
-  <circle cx="636" cy="340" r="16" fill="${ACCENT}"/>
+  <circle cx="910" cy="369" r="29" fill="${ACCENT}"/>
 </svg>`;
 
 // ── ICO encoder (BMP-based, supports multiple resolutions) ────────────────────
@@ -112,7 +135,7 @@ async function main() {
   console.log('Generating favicon and OG assets…');
 
   // 16×16 PNG
-  const png16 = await sharp(Buffer.from(squareSvg(1000)))
+  const png16 = await sharp(Buffer.from(faviconSvg))
     .resize(16, 16)
     .png()
     .toBuffer();
@@ -120,7 +143,7 @@ async function main() {
   console.log('✓ favicon-16.png');
 
   // 32×32 PNG
-  const png32 = await sharp(Buffer.from(squareSvg(1000)))
+  const png32 = await sharp(Buffer.from(faviconSvg))
     .resize(32, 32)
     .png()
     .toBuffer();
@@ -128,7 +151,7 @@ async function main() {
   console.log('✓ favicon-32.png');
 
   // 180×180 apple-touch-icon
-  const png180 = await sharp(Buffer.from(squareSvg(1000)))
+  const png180 = await sharp(Buffer.from(appleSvg))
     .resize(180, 180)
     .png()
     .toBuffer();
