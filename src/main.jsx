@@ -1042,9 +1042,9 @@ function About({ T, accent, portraitUrl }) {
                 the only part I've never wanted to stop doing.
               </p>
               <p style={{ margin: 0 }}>
-                Most recently: TikTok Shop affiliate, drove <span style={{ color: T.fg, fontWeight: 500 }}>20M+ views</span> and
+                Most recently, I was a TikTok Shop affiliate — drove <span style={{ color: T.fg, fontWeight: 500 }}>20M+ views</span> and
                 <span style={{ color: T.fg, fontWeight: 500 }}> $75k+ in revenue</span> for the brands I promoted.
-                Today I run king, where I do the same thing for a select few clients.
+                Today I run king, where I do the same thing for a select few experts.
               </p>
             </div>
           </div>
