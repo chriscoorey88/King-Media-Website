@@ -329,7 +329,7 @@ function SectionLabel({ children, accent }) {
 const HEADLINES = {
   dominate: {
     label: 'top experts dominate social media',
-    render: (accent) => (<>We help <span style={{color: accent}}>top experts</span> dominate social media.</>),
+    render: (accent) => (<>I make <span style={{color: accent}}>experts</span> impossible to ignore.</>),
   },
   king: {
     label: 'kings of your category',
@@ -542,13 +542,13 @@ function CaseStudy({ T, accent }) {
           fontSize: 'clamp(30px, 3.5vw, 48px)', letterSpacing: '-0.025em',
           lineHeight: 1.02, color: T.fg, margin: '16px 0 0', textWrap: 'balance',
         }}>
-          For those who are <span style={{ color: accent }}>already winning</span> offline.
+          For those who are <span style={{ color: accent }}>already winning</span>.
         </h2>
         <div className="king-case-grid">
           <p style={{
             fontFamily: DISPLAY, fontSize: 17, color: T.fgMuted, lineHeight: 1.7, margin: 0,
           }}>
-            In today's world, a personal brand is the most valuable asset you can own as an entrepreneur. We help industry leaders dominate the social media space. We understand its dynamics and help entrepreneurs turn their know-how into a strong, authentic brand and subsequent monetization.
+            Being the best at what you do isn't enough anymore. The top players right now aren't the smartest in the room — they're the ones with the loudest distribution. That's what I build. You stay the expert. I make sure the right people see you.
           </p>
           <div className="king-case-stats">
             {[
