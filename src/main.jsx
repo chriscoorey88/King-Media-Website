@@ -777,7 +777,7 @@ function SorenTestimonial({ T, accent }) {
               fontFamily: DISPLAY, fontSize: 16, color: T.fgMuted, lineHeight: 1.7,
               marginTop: 20, marginBottom: 48, maxWidth: 460,
             }}>
-              Soren came to us with a growing personal brand. We scaled it then rebuilt it from scratch. Here's what he has to say.
+              Soren came to me with a growing personal brand. I scaled it then rebuilt it from scratch. Here's what he has to say.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
@@ -1156,9 +1156,9 @@ function PortraitPlaceholder({ T, accent }) {
 
 function Services({ T, accent }) {
   const items = [
-    { n: '01', title: 'Content strategy', body: 'We do a deep dive into your market, your audience, and what\'s already working in your space — then build a content plan that\'s completely tailored to you and your brand.' },
-    { n: '02', title: 'Production', body: 'Once a week, we sit down with you and record everything. You show up, share your expertise, and we take it from there. No stress on your end.' },
-    { n: '03', title: 'Editing & distribution', body: 'We professionally edit every video and post it across your platforms on your behalf. You don\'t lift a finger — your content goes out consistently while you focus on your business.' },
+    { n: '01', title: 'Content strategy', body: 'I do a deep dive into your market, your audience, and what\'s already working in your space — then build a content plan that\'s completely tailored to you and your brand.' },
+    { n: '02', title: 'Production', body: 'Once a week, I sit down with you and record everything. You show up, share your expertise, and I take it from there. No stress on your end.' },
+    { n: '03', title: 'Editing & distribution', body: 'I professionally edit every video and post it across your platforms on your behalf. You don\'t lift a finger — your content goes out consistently while you focus on your business.' },
   ];
   return (
     <section className="king-services-section" style={{
