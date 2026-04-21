@@ -331,14 +331,6 @@ const HEADLINES = {
     label: 'top experts dominate social media',
     render: (accent) => (<>I make <span style={{color: accent}}>experts</span> impossible to ignore.</>),
   },
-  king: {
-    label: 'kings of your category',
-    render: (accent) => (<>We make founders <span style={{color: accent}}>kings</span> of their category.</>),
-  },
-  rule: {
-    label: 'rule the feed',
-    render: (accent) => (<>We help experts <span style={{color: accent}}>rule</span> the feed.</>),
-  },
   growth: {
     label: 'serious growth',
     render: (accent) => (<>Serious accounts. <span style={{color: accent}}>Serious growth.</span></>),
@@ -536,7 +528,7 @@ function CaseStudy({ T, accent }) {
       background: T.bgAlt,
     }}>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-        <SectionLabel accent={accent}>About Us</SectionLabel>
+        <SectionLabel accent={accent}>About</SectionLabel>
         <h2 style={{
           fontFamily: DISPLAY, fontWeight: 600,
           fontSize: 'clamp(30px, 3.5vw, 48px)', letterSpacing: '-0.025em',
@@ -1167,7 +1159,7 @@ function Services({ T, accent }) {
       <div style={{ maxWidth: 1400, margin: '0 auto' }}>
         <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 72, gap: 40, flexWrap: 'wrap' }}>
           <div style={{ maxWidth: 640 }}>
-            <SectionLabel accent={accent}>What we do</SectionLabel>
+            <SectionLabel accent={accent}>What I do</SectionLabel>
             <h2 style={{
               fontFamily: DISPLAY, fontWeight: 600,
               fontSize: 'clamp(28px, 3vw, 44px)', letterSpacing: '-0.025em',
@@ -1197,22 +1189,22 @@ function Services({ T, accent }) {
 function Process({ T, accent }) {
   const steps = [
     { n: '01', tag: 'Kickoff week', title: 'Trial run', body: "Some clients start with a single free content week — one recording, full pipeline, real posts. You see what the output looks like before you commit." },
-    { n: '02', tag: 'Month 1', title: 'Test & learn', body: 'First 30 days we post widely across hooks, formats, and angles. Weekly reviews, fast iteration. The feed tells us what\'s real.' },
+    { n: '02', tag: 'Month 1', title: 'Test & learn', body: 'First 30 days I post widely across hooks, formats, and angles. Weekly reviews, fast iteration. The feed tells me what\'s real.' },
     { n: '03', tag: 'Month 2+', title: 'Double down', body: 'Kill the formats that died. Amplify what worked. Cadence gets dense, hooks get sharper, and the numbers start compounding.' },
-    { n: '04', tag: 'Always', title: 'Report & adjust', body: 'Friday recap: views, saves, followers, inbound. Real numbers, no vanity. Next week adjusts based on what the feed told us.' },
+    { n: '04', tag: 'Always', title: 'Report & adjust', body: 'Friday recap: views, saves, followers, inbound. Real numbers, no vanity. Next week adjusts based on what the feed told me.' },
   ];
   return (
     <section style={{ padding: '120px 44px', borderTop: `1px solid ${T.border}` }}>
       <div style={{ maxWidth: 1400, margin: '0 auto' }}>
         <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 72, gap: 40, flexWrap: 'wrap' }}>
           <div style={{ maxWidth: 640 }}>
-            <SectionLabel accent={accent}>How we work</SectionLabel>
+            <SectionLabel accent={accent}>How I work</SectionLabel>
             <h2 style={{ fontFamily: DISPLAY, fontWeight: 600, fontSize: 'clamp(28px, 3vw, 44px)', letterSpacing: '-0.025em', lineHeight: 1.05, color: T.fg, margin: 0 }}>
               A loop, not a <br/>one-time project.
             </h2>
           </div>
           <div style={{ fontFamily: MONO, fontSize: 12, color: T.fgMuted, letterSpacing: 1.5, textTransform: 'uppercase', maxWidth: 320 }}>
-            ~ You show up once a week. We run the machine.
+            ~ You show up once a week. I run the machine.
           </div>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
@@ -1247,7 +1239,7 @@ function Qualify({ T, accent }) {
   const no = [
     'You don\'t have an offer behind the content yet',
     'You want viral-for-viral\'s-sake',
-    'You want us to write things you don\'t actually believe',
+    'You want me to write things you don\'t actually believe',
     'You\'re looking for the cheapest option',
   ];
   const Row = ({ items, good }) => (
@@ -1261,7 +1253,7 @@ function Qualify({ T, accent }) {
           )}
         </div>
         <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: 2, textTransform: 'uppercase', color: good ? accent : T.fgMuted }}>
-          {good ? 'Good fit' : 'Not for us'}
+          {good ? 'Good fit' : 'Not for me'}
         </div>
       </div>
       <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 16 }}>
@@ -1304,7 +1296,7 @@ function FAQ({ T, accent }) {
     },
     {
       q: "What does it cost?",
-      a: "Depends on the scope. I currently work on a revenue share + setup fee model, but I'm moving toward flat monthly retainers. We figure out fit on the call, and if it makes sense for both of us, I'll give you the number. I'm not the cheap option — if price is your main criterion, we're not a match.",
+      a: "Depends on the scope. I currently work on a revenue share + setup fee model, but I'm moving toward flat monthly retainers. I'll figure out fit on the call, and if it makes sense for both of us, I'll give you the number. If it doesn't, I'll tell you straight up — no hard sell, no follow-up nurture sequence. We're not a match and that's fine.",
     },
     {
       q: "How many clients do you take?",
