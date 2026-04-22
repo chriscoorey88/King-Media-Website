@@ -719,7 +719,7 @@ function SorenTestimonial({ T, accent }) {
   const shots = [
     {
       src: 'assets/soren-profile.webp',
-      stat: '59.5K',
+      stat: '60K',
       label: 'Followers today · @yngsoren',
       sub: 'Growing',
     },
